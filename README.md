@@ -34,19 +34,6 @@ This project also acts as a growing reference and learning portfolio for my jour
 
 ---
 
-##  Project Structure
-bandit/
-├── level0-01.md
-├── level01-02.md
-├── level02-03.md
-├── level03-04.md
-├── ...
-
-
-Each file represents a write-up for a single Bandit level.
-
----
-
 ##  Write-Up Format
 Each level write-up includes:
 - The goal of the level  

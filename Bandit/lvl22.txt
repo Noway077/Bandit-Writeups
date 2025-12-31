@@ -1,0 +1,43 @@
+Bandit Level 22
+
+Goal:
+Analyze the cron job running automatically and determine how it generates a filename in /tmp that contains the password for the next level.
+
+Steps:
+
+ssh bandit22@bandit.labs.overthewire.org -p 2220
+cd /etc/cron.d/
+ls
+cat cronjob_bandit23
+
+
+The cron job runs a script as user bandit23 every minute.
+
+Read the script:
+
+cat /usr/bin/cronjob_bandit23.sh
+
+
+The script:
+
+Gets the current username using whoami
+
+Generates an MD5 hash based on the username
+
+Copies the password file to /tmp/<hash>
+
+Replicate the filename generation:
+
+echo I am user bandit23 | md5sum | cut -d ' ' -f 1
+
+
+Use the generated hash to read the password:
+
+cat /tmp/<generated_hash>
+
+
+Result:
+The password for Bandit Level 23 was successfully obtained.
+
+Learning:
+Learned how to read and understand bash scripts, reproduce script logic manually, and use hashing to locate dynamically created files.

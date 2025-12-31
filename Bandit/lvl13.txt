@@ -1,0 +1,24 @@
+Bandit Level 13
+
+Goal:
+The password for the next level is stored in /etc/bandit_pass/bandit14 and can only be read by user bandit14. A private SSH key is provided to log into the next level.
+
+Steps:
+
+ssh bandit13@bandit.labs.overthewire.org -p 2220
+ls
+cat sshkey.private
+exit
+
+scp -P 2220 bandit13@bandit.labs.overthewire.org:~/sshkey.private .
+chmod 600 sshkey.private
+
+ssh -i sshkey.private bandit14@bandit.labs.overthewire.org -p 2220
+cat /etc/bandit_pass/bandit14
+
+
+Result:
+Password for the next level was obtained successfully.
+
+Learning:
+Learned how to use SSH key-based authentication, transfer files using scp, and set correct permissions for private keys.

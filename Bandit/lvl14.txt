@@ -1,0 +1,19 @@
+Bandit Level 14
+
+Goal:
+The password for the next level can be retrieved by submitting the current level’s password to port 30000 on localhost.
+
+Steps:
+
+ssh -i sshkey.private bandit14@bandit.labs.overthewire.org -p 2220
+cat /etc/bandit_pass/bandit14
+nc localhost 30000
+
+
+(After connecting, paste the bandit14 password and press Enter.)
+
+Result:
+Password for the next level was obtained successfully.
+
+Learning:
+Learned how to use nc (netcat) to communicate with a service running on a specific port and retrieve data using client-server communication.

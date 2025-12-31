@@ -1,0 +1,15 @@
+Bandit Level 9
+
+Goal:
+The password for the next level is stored in the file data.txt in one of the few human-readable strings, preceded by several = characters.
+
+Steps:
+
+strings data.txt | grep "="
+
+
+Result:
+Password for the next level was obtained successfully.
+
+Learning:
+Learned how to extract readable text from a binary file using strings and filter specific patterns using grep.

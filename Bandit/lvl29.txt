@@ -1,0 +1,40 @@
+Bandit Level 29
+
+Goal:
+Find the password for the next level by exploring non-production branches in the Git repository.
+
+Steps:
+Clone the repository and list files:
+
+git clone ssh://bandit29-git@bandit.labs.overthewire.org:2220/home/bandit29-git/repo
+cd repo
+ls
+
+
+Read the README on the master branch:
+
+cat README.md
+
+
+The password is not present in the production branch.
+
+List all available branches:
+
+git branch -a
+
+
+Switch to the development branch:
+
+git checkout remotes/origin/dev
+
+
+Read the README again:
+
+cat README.md
+
+
+Result:
+The password for Bandit Level 30 was successfully obtained from the development branch.
+
+Learning:
+Learned how to enumerate Git branches, switch between them, and retrieve sensitive information stored outside the production branch.

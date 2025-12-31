@@ -1,0 +1,18 @@
+Bandit Level 3
+
+Goal:
+The password for the next level is stored in a hidden file inside the inhere directory.
+
+Steps:
+
+ls
+cd inhere
+ls -a
+cat ./...Hiding-From-You
+
+
+Result:
+Password for the next level was obtained successfully.
+
+Learning:
+Learned how to locate hidden files using ls -a and read files with unusual names by specifying the relative path.

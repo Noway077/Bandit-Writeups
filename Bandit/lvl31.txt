@@ -1,0 +1,51 @@
+Bandit Level 31
+
+Goal:
+Clone the Git repository and push a file with exact content to obtain the password for the next level.
+
+Steps:
+Clone the repository:
+
+git clone ssh://bandit31-git@bandit.labs.overthewire.org:2220/home/bandit31-git/repo
+cd repo
+
+
+Read the instructions:
+
+cat README.md
+
+
+Create the required file with exact content:
+
+printf "May I come in?" > key.txt
+
+
+Configure Git user details:
+
+git config user.name bandit31
+git config user.email bandit31@bandit.labs.overthewire.org
+
+
+Check the .gitignore file:
+
+cat .gitignore
+
+
+Force add the file and commit:
+
+git add -f key.txt
+git commit -m "Add key"
+
+
+Push the changes:
+
+git push origin master
+
+
+The server validates the file and prints the password in the output.
+
+Result:
+The password for Bandit Level 32 was successfully obtained after pushing the correct file.
+
+Learning:
+Learned how to bypass .gitignore rules, push changes to a Git repository, and ensure exact file content using printf.

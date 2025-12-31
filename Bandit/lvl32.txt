@@ -1,0 +1,40 @@
+Bandit Level 32
+
+Goal:
+Escape the restricted uppercase shell and obtain the password for the next level.
+
+Steps:
+Login to the level:
+
+ssh bandit32@bandit.labs.overthewire.org -p 2220
+
+
+After login, commands are converted to uppercase and normal commands fail.
+
+Escape the uppercase shell using:
+
+$0
+
+
+This spawns a normal shell.
+
+List files and identify the SUID binary:
+
+ls -la
+
+
+Confirm the current user:
+
+whoami
+
+
+Read the password for the next level:
+
+cat /etc/bandit_pass/bandit33
+
+
+Result:
+Successfully escaped the restricted shell and obtained the password for Bandit Level 33.
+
+Learning:
+Learned how restricted shells work, how environment variables can be used to bypass input restrictions, and how SUID binaries affect user privileges.

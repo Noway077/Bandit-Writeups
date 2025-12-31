@@ -1,0 +1,16 @@
+Bandit Level 2
+
+Goal:
+The password for the next level is stored in a file called --spaces in this filename-- located in the home directory.
+
+Steps:
+
+ls
+cat ./--spaces\ in\ this\ filename--
+
+
+Result:
+Password for the next level was obtained successfully.
+
+Learning:
+Learned how to read files with spaces and special characters in their names by escaping spaces using \ and specifying the file path.

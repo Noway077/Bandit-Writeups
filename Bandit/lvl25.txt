@@ -1,0 +1,61 @@
+Bandit Level 25
+
+Goal:
+Login as bandit26 using the provided SSH key and escape from the restricted shell (showtext) to obtain the password for the next level.
+
+Steps:
+
+ssh bandit25@bandit.labs.overthewire.org -p 2220
+ls
+
+
+A file named bandit26.sshkey is available.
+Check the shell used by bandit26:
+
+cat /etc/passwd | grep bandit26
+
+
+Bandit26 uses /usr/bin/showtext instead of /bin/bash.
+
+Inspect the shell:
+
+cat /usr/bin/showtext
+
+
+It uses more to display a text file and exits immediately.
+
+Exit and download the SSH key to your local machine:
+
+exit
+scp -P 2220 bandit25@bandit.labs.overthewire.org:bandit26.sshkey .
+chmod 600 bandit26.sshkey
+
+
+Resize your terminal window very small (important).
+
+Login using the key:
+
+ssh -i bandit26.sshkey bandit26@bandit.labs.overthewire.org -p 2220
+
+
+When --More-- appears, press:
+
+v
+
+
+In the vi editor, set bash as the shell:
+
+:set shell=/bin/bash
+:shell
+
+
+Now read the password:
+
+cat /etc/bandit_pass/bandit26
+
+
+Result:
+Successfully escaped the restricted shell and obtained the password for Bandit Level 26.
+
+Learning:
+Learned how restricted shells work, how pager programs like more can be exploited, and how to escape into a full bash shell using vi.

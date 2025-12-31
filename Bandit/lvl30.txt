@@ -1,0 +1,41 @@
+Bandit Level 30
+
+Goal:
+Clone the Git repository and find the password for the next level by inspecting Git tags.
+
+Steps:
+Clone the repository:
+
+git clone ssh://bandit30-git@localhost:2220/home/bandit30-git/repo
+cd repo
+ls
+
+
+Check the README file:
+
+cat README.md
+
+
+No useful information is present, so explore Git metadata.
+
+Check commit history and branches:
+
+git log
+git branch -a
+
+
+List available Git tags:
+
+git tag
+
+
+Inspect the secret tag:
+
+git show secret
+
+
+Result:
+The password for Bandit Level 31 was successfully obtained from the Git tag.
+
+Learning:
+Learned how Git tags can store important information and how to inspect them to retrieve hidden data.

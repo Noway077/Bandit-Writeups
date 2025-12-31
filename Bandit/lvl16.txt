@@ -1,0 +1,23 @@
+Bandit Level 16
+
+Goal:
+The password for the next level is an SSH private key obtained from the correct SSL-enabled service running on localhost between ports 31000–32000.
+
+Steps:
+
+ssh bandit16@bandit.labs.overthewire.org -p 2220
+nmap -p 31000-32000 localhost
+ncat --ssl localhost 31790
+# paste bandit16 password
+nano /tmp/bandit17.key
+chmod 600 /tmp/bandit17.key
+scp -P 2220 bandit16@bandit.labs.overthewire.org:/tmp/bandit17.key .
+ssh -i bandit17.key bandit17@bandit.labs.overthewire.org -p 2220
+cat /etc/bandit_pass/bandit17
+
+
+Result:
+Successfully logged in as bandit17 and obtained the password.
+
+Learning:
+Learned how to identify SSL services, extract an SSH private key, set correct permissions, transfer it securely, and authenticate using SSH keys.

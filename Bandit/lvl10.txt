@@ -1,0 +1,15 @@
+Bandit Level 10
+
+Goal:
+The password for the next level is stored in the file data.txt, which contains base64 encoded data.
+
+Steps:
+
+base64 -d data.txt
+
+
+Result:
+Password for the next level was obtained successfully.
+
+Learning:
+Learned how to decode base64 encoded data using the base64 -d command.

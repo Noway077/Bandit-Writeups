@@ -1,0 +1,30 @@
+Bandit Level 20
+
+Goal:
+Use the setuid binary suconnect to connect to a local listening service, send the current level password, and receive the password for the next level.
+
+Steps:
+
+ssh bandit20@bandit.labs.overthewire.org -p 2220
+ls -la
+cat /etc/bandit_pass/bandit20
+
+
+Start a listener that sends the current level password:
+
+echo "<bandit20_password>" | nc -l -p 6000
+
+
+Open a second terminal and connect using the SUID binary:
+
+ssh bandit20@bandit.labs.overthewire.org -p 2220
+./suconnect 6000
+
+
+The suconnect binary connects to the listening port, verifies the password, and returns the next level password.
+
+Result:
+The password for Bandit Level 21 was successfully obtained.
+
+Learning:
+Learned how SUID binaries interact with network services and how to use netcat for basic client-server communication.

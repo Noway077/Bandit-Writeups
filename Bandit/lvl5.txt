@@ -1,0 +1,17 @@
+Bandit Level 5
+
+Goal:
+The password for the next level is stored in a file under the inhere directory that is human-readable, exactly 1033 bytes in size, and not executable.
+
+Steps:
+
+cd inhere
+find . -type f -size 1033c
+cat ././maybehere07/.file2
+
+
+Result:
+Password for the next level was obtained successfully.
+
+Learning:
+Learned how to locate files based on size using find and understood that multiple ./ in a path still refer to the current directory.

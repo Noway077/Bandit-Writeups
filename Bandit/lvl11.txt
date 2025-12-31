@@ -1,0 +1,15 @@
+Bandit Level 11
+
+Goal:
+The password for the next level is stored in the file data.txt, where all lowercase and uppercase letters have been rotated by 13 positions.
+
+Steps:
+
+cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+
+
+Result:
+Password for the next level was obtained successfully.
+
+Learning:
+Learned how to decode ROT13 encoded text using the tr command by mapping alphabet halves.

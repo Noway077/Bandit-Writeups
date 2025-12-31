@@ -1,0 +1,26 @@
+Bandit Level 33
+
+Goal:
+Login to the final level and read the README file to complete the game.
+
+Steps:
+Login to the server:
+
+ssh bandit33@bandit.labs.overthewire.org -p 2220
+
+
+List the files:
+
+ls
+
+
+Display the README file:
+
+cat README.txt
+
+
+Result:
+The final message was displayed, marking the successful completion of the Bandit wargame.
+
+Learning:
+Learned how to complete the final level and confirm successful access to the last Bandit account.

@@ -1,0 +1,22 @@
+Bandit Level 27
+
+Goal:
+Clone the Git repository available over SSH and locate the password for the next level stored inside it.
+
+Steps:
+
+git clone ssh://bandit27-git@bandit.labs.overthewire.org:2220/home/bandit27-git/repo
+
+
+Enter the password for bandit27 when prompted.
+
+cd repo
+ls
+cat README
+
+
+Result:
+The password for Bandit Level 28 was successfully obtained from the repository.
+
+Learning:
+Learned how to clone Git repositories over SSH using a non-default port and retrieve credentials stored inside repository files.

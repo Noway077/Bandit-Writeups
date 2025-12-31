@@ -1,0 +1,17 @@
+Level 0 Bandit
+
+Goal:
+The password for the next level is stored in a file called readme in the home directory.
+
+Steps:
+
+ssh bandit0@bandit.labs.overthewire.org -p 2220
+ls
+cat readme
+
+
+Result:
+Password for the next level was obtained successfully.
+
+Learning:
+Basic SSH login and file reading using Linux commands.

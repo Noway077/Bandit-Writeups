@@ -1,0 +1,31 @@
+Bandit Level 26
+
+Goal:
+Use the setuid binary available in the home directory to execute commands as bandit27 and retrieve the password for the next level.
+
+Steps:
+Make sure you are logged in as bandit26 with a bash shell (from the previous level).
+
+Check the available files:
+
+ls
+ls -la
+
+
+Identify the setuid binary bandit27-do.
+
+Test how the binary works:
+
+./bandit27-do
+
+
+Use it to read the password for bandit27:
+
+./bandit27-do cat /etc/bandit_pass/bandit27
+
+
+Result:
+The password for Bandit Level 27 was successfully obtained.
+
+Learning:
+Learned how setuid binaries allow command execution as another user and how they can be used to access restricted files.

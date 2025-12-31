@@ -1,0 +1,36 @@
+Bandit Level 28
+
+Goal:
+Find the password for the next level by exploring the Git commit history and identifying information that was removed in a later commit.
+
+Steps:
+Clone the repository and enter it:
+
+git clone ssh://bandit28-git@bandit.labs.overthewire.org/home/bandit28-git/repo
+cd repo
+ls
+
+
+Read the README file:
+
+cat README.md
+
+
+The password is hidden, so check the commit history:
+
+git log
+
+
+Notice the commit message indicating a fixed information leak.
+Inspect that commit:
+
+git show b5ed4b5a3499533c2611217c8780e8ead48609f6
+
+
+The earlier version of the file reveals the password before it was hidden.
+
+Result:
+The password for Bandit Level 29 was successfully obtained from the commit history.
+
+Learning:
+Learned how to use Git history and commit inspection to recover sensitive data removed in later commits.

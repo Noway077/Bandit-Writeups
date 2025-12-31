@@ -1,0 +1,17 @@
+Bandit Level 4
+
+Goal:
+The password for the next level is stored in the only human-readable file in the inhere directory.
+
+Steps:
+
+cd inhere
+file ./-*
+cat ./-file07
+
+
+Result:
+Password for the next level was obtained successfully.
+
+Learning:
+Learned how to identify human-readable files using the file command and how to handle filenames starting with - using ./.

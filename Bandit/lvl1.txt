@@ -1,0 +1,16 @@
+Bandit – Level 1 
+
+Goal:
+The password for the next level is stored in a file called - located in the home directory.
+
+Steps:
+
+ls -l
+cat ./-
+
+
+Result:
+Password for the next level was obtained successfully.
+
+Learning:
+Learned how to read a file with a special name (-) by explicitly specifying its path using ./.

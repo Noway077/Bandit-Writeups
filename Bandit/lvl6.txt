@@ -1,0 +1,16 @@
+Bandit Level 6
+
+Goal:
+The password for the next level is stored somewhere on the server, owned by user bandit7, owned by group bandit6, and exactly 33 bytes in size.
+
+Steps:
+
+find / -type f -user bandit7 -group bandit6 -size 33c 2>/dev/null
+cat /var/lib/dpkg/info/bandit7.password
+
+
+Result:
+Password for the next level was obtained successfully.
+
+Learning:
+Learned how to search the entire filesystem using find with ownership and size filters, and how to suppress permission errors using 2>/dev/null.

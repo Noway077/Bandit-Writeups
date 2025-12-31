@@ -1,0 +1,21 @@
+Bandit Level 17
+
+Goal:
+There are two files in the home directory: passwords.old and passwords.new.
+The password for the next level is the only line that differs between these two files and is found in passwords.new.
+
+Steps:
+
+ssh bandit17@bandit.labs.overthewire.org -p 2220
+ls
+diff passwords.old passwords.new
+
+
+The diff command highlights the changed line.
+The line marked with > belongs to passwords.new and contains the password for the next level.
+
+Result:
+The changed line was identified and the password for Bandit Level 18 was obtained.
+
+Learning:
+Learned how to compare two text files using diff and interpret file differences to find modified content.

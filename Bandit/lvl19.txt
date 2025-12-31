@@ -1,0 +1,22 @@
+Bandit Level 19
+
+Goal:
+Use the setuid binary in the home directory to run commands as bandit20 and read the password stored in /etc/bandit_pass/bandit20.
+
+Steps:
+
+ssh bandit19@bandit.labs.overthewire.org -p 2220
+ls -la
+ls -l bandit20-do
+./bandit20-do
+./bandit20-do cat /etc/bandit_pass/bandit20
+
+
+The bandit20-do file has the setuid bit set, which allows it to run with bandit20’s privileges.
+Using it with cat reveals the password file.
+
+Result:
+The password for Bandit Level 20 was successfully obtained.
+
+Learning:
+Learned how setuid (SUID) binaries work and how they can be used to execute commands with another user’s privileges.

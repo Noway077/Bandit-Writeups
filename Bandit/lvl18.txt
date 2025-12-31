@@ -1,0 +1,18 @@
+Bandit Level 18
+
+Goal:
+The password for the next level is stored in the readme file in the home directory.
+Login using SSH normally is not possible because .bashrc is modified to log you out immediately.
+
+Steps:
+
+ssh bandit18@bandit.labs.overthewire.org -p 2220 cat readme
+
+
+This command runs cat readme directly on the remote server without starting an interactive shell, which bypasses the .bashrc restriction.
+
+Result:
+The contents of the readme file were displayed and the password for Bandit Level 19 was obtained.
+
+Learning:
+Learned how to execute commands directly through SSH to bypass restricted shell configurations.

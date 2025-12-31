@@ -58,8 +58,3 @@ All techniques demonstrated are intended to improve understanding of Linux and s
 
 ---
 
-##  About the Author
-Cybersecurity learner with a strong interest in  
-**Linux, Ethical Hacking, Cloud, and Security Fundamentals**.
-
-Focused on building solid foundations through hands-on labs, wargames, and continuous practice.
